@@ -10,6 +10,8 @@
 #import "FlickrFetcher.h"
 #import "MapViewController.h"
 #import "PhotoAnnotation.h"
+@interface PhotoTableViewController() <MapViewControllerDelegate>
+@end
 
 @implementation PhotoTableViewController
 @synthesize photos = _photos;
@@ -41,9 +43,19 @@
     id detail = [self.splitViewController.viewControllers lastObject];
     if ([detail isKindOfClass:[MapViewController class]]) {
         MapViewController *mapVC = (MapViewController *)detail;
+        mapVC.delegate = self;
         mapVC.annotations = [self mapAnnotations];
     }
 }
+
+-(UIImage *)mapViewController:(MapViewController *)sender imageForAnnotation:(id<MKAnnotation>)annotation
+{
+    PhotoAnnotation *pa = (PhotoAnnotation *) annotation;
+    NSURL *url = [FlickrFetcher urlForPhoto:pa.photo format:FlickrPhotoFormatSquare];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    return data ? [UIImage imageWithData:data] : nil;
+}
+
 -(void)setPhotos:(NSArray *)photos
 {
     if (_photos != photos) {

@@ -9,14 +9,14 @@
 #import "MapViewController.h"
 #import <MapKit/MapKit.h>
 
-@interface MapViewController()
+@interface MapViewController() <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @end
 
 @implementation MapViewController
 @synthesize mapView = _mapView;
 @synthesize annotations = _annotations;
-
+@synthesize delegate = _delegate;
 -(void)updateMapView
 {
     if (self.mapView.annotations) [self.mapView removeAnnotations:self.mapView.annotations];
@@ -59,18 +59,37 @@
 {
 }
 */
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    //为针上增加左侧图片
+    MKAnnotationView *aView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"MapVC"];
+    if (!aView) {
+        aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MapVC"];
+        aView.canShowCallout = YES;
+        aView.leftCalloutAccessoryView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    }
+    aView.annotation = annotation;
+    [(UIImageView *)aView.leftCalloutAccessoryView setImage:nil];
+    return aView;
+}
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)aView
+{
+    UIImage *image = [self.delegate mapViewController:self imageForAnnotation:aView.annotation];
+    [(UIImageView *)aView.leftCalloutAccessoryView setImage:image];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.mapView.delegate = self;
 }
-*/
 
 - (void)viewDidUnload
 {
     [self setMapView:nil];
+    [self setAnnotations:nil];
+    [self setDelegate:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
