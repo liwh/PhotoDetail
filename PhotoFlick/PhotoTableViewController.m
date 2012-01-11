@@ -8,6 +8,8 @@
 
 #import "PhotoTableViewController.h"
 #import "FlickrFetcher.h"
+#import "MapViewController.h"
+#import "PhotoAnnotation.h"
 
 @implementation PhotoTableViewController
 @synthesize photos = _photos;
@@ -26,10 +28,27 @@
     });
 }
 
+-(NSArray *) mapAnnotations
+{
+    NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[self.photos count]];
+    for (NSDictionary *photo in self.photos) {
+        [annotations addObject:[PhotoAnnotation annotationForPhoto:photo]];
+    }
+         return annotations;
+}
+-(void)updateSplitViewDetail
+{
+    id detail = [self.splitViewController.viewControllers lastObject];
+    if ([detail isKindOfClass:[MapViewController class]]) {
+        MapViewController *mapVC = (MapViewController *)detail;
+        mapVC.annotations = [self mapAnnotations];
+    }
+}
 -(void)setPhotos:(NSArray *)photos
 {
     if (_photos != photos) {
         _photos = photos ;
+        [self updateSplitViewDetail];
         if(self.tableView.window) [self.tableView reloadData];
     }
 }

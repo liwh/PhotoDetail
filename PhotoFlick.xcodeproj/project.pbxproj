@@ -17,6 +17,10 @@
 		18A8999A14BD68C800FAC22A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A8999814BD68C800FAC22A /* MainStoryboard_iPad.storyboard */; };
 		18A899A514BD695200FAC22A /* PhotoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A899A414BD695200FAC22A /* PhotoTableViewController.m */; };
 		18A899B514BD6E4000FAC22A /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A899B414BD6E4000FAC22A /* FlickrFetcher.m */; };
+		18A899BC14BD7EBE00FAC22A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A899BB14BD7EBE00FAC22A /* MapViewController.m */; };
+		18A899C214BD7F9400FAC22A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A899C114BD7F9400FAC22A /* MapKit.framework */; };
+		18A899C414BD7F9B00FAC22A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A899C314BD7F9B00FAC22A /* CoreLocation.framework */; };
+		18A899C714BD884700FAC22A /* PhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A899C614BD884700FAC22A /* PhotoAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,12 @@
 		18A899B214BD6E4000FAC22A /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
 		18A899B314BD6E4000FAC22A /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
 		18A899B414BD6E4000FAC22A /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		18A899BA14BD7EBE00FAC22A /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		18A899BB14BD7EBE00FAC22A /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		18A899C114BD7F9400FAC22A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		18A899C314BD7F9B00FAC22A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		18A899C514BD884700FAC22A /* PhotoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAnnotation.h; sourceTree = "<group>"; };
+		18A899C614BD884700FAC22A /* PhotoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A899C414BD7F9B00FAC22A /* CoreLocation.framework in Frameworks */,
+				18A899C214BD7F9400FAC22A /* MapKit.framework in Frameworks */,
 				18A8998414BD68C800FAC22A /* UIKit.framework in Frameworks */,
 				18A8998614BD68C800FAC22A /* Foundation.framework in Frameworks */,
 				18A8998814BD68C800FAC22A /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +68,8 @@
 		18A8997414BD68C700FAC22A = {
 			isa = PBXGroup;
 			children = (
+				18A899C314BD7F9B00FAC22A /* CoreLocation.framework */,
+				18A899C114BD7F9400FAC22A /* MapKit.framework */,
 				18A8998914BD68C800FAC22A /* PhotoFlick */,
 				18A8998214BD68C800FAC22A /* Frameworks */,
 				18A8998014BD68C800FAC22A /* Products */,
@@ -88,8 +102,12 @@
 				18A899B414BD6E4000FAC22A /* FlickrFetcher.m */,
 				18A8999514BD68C800FAC22A /* MainStoryboard_iPhone.storyboard */,
 				18A8999814BD68C800FAC22A /* MainStoryboard_iPad.storyboard */,
+				18A899BA14BD7EBE00FAC22A /* MapViewController.h */,
+				18A899BB14BD7EBE00FAC22A /* MapViewController.m */,
 				18A899A314BD695200FAC22A /* PhotoTableViewController.h */,
 				18A899A414BD695200FAC22A /* PhotoTableViewController.m */,
+				18A899C514BD884700FAC22A /* PhotoAnnotation.h */,
+				18A899C614BD884700FAC22A /* PhotoAnnotation.m */,
 				18A8998A14BD68C800FAC22A /* Supporting Files */,
 			);
 			path = PhotoFlick;
@@ -175,6 +193,8 @@
 				18A8999414BD68C800FAC22A /* AppDelegate.m in Sources */,
 				18A899A514BD695200FAC22A /* PhotoTableViewController.m in Sources */,
 				18A899B514BD6E4000FAC22A /* FlickrFetcher.m in Sources */,
+				18A899BC14BD7EBE00FAC22A /* MapViewController.m in Sources */,
+				18A899C714BD884700FAC22A /* PhotoAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
