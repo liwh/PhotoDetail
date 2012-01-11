@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PhotoTableViewController.h
 //  PhotoFlick
 //
 //  Created by liwh on 12-1-11.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PhotoTableViewController : UITableViewController
+@property(nonatomic,strong) NSArray *photos;
 @end

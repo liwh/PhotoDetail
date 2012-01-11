@@ -15,7 +15,8 @@
 		18A8999414BD68C800FAC22A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A8999314BD68C800FAC22A /* AppDelegate.m */; };
 		18A8999714BD68C800FAC22A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A8999514BD68C800FAC22A /* MainStoryboard_iPhone.storyboard */; };
 		18A8999A14BD68C800FAC22A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A8999814BD68C800FAC22A /* MainStoryboard_iPad.storyboard */; };
-		18A8999D14BD68C800FAC22A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A8999C14BD68C800FAC22A /* ViewController.m */; };
+		18A899A514BD695200FAC22A /* PhotoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A899A414BD695200FAC22A /* PhotoTableViewController.m */; };
+		18A899B514BD6E4000FAC22A /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A899B414BD6E4000FAC22A /* FlickrFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +24,19 @@
 		18A8998314BD68C800FAC22A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		18A8998514BD68C800FAC22A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18A8998714BD68C800FAC22A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		18A8998B14BD68C800FAC22A /* PhotoFlick-Info.plist */ = {isa = PBXFileReference; path = "PhotoFlick-Info.plist"; sourceTree = "<group>"; };
+		18A8998B14BD68C800FAC22A /* PhotoFlick-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotoFlick-Info.plist"; sourceTree = "<group>"; };
 		18A8998D14BD68C800FAC22A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18A8998F14BD68C800FAC22A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		18A8999114BD68C800FAC22A /* PhotoFlick-Prefix.pch */ = {isa = PBXFileReference; path = "PhotoFlick-Prefix.pch"; sourceTree = "<group>"; };
-		18A8999214BD68C800FAC22A /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		18A8999114BD68C800FAC22A /* PhotoFlick-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoFlick-Prefix.pch"; sourceTree = "<group>"; };
+		18A8999214BD68C800FAC22A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18A8999314BD68C800FAC22A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18A8999614BD68C800FAC22A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		18A8999914BD68C800FAC22A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		18A8999B14BD68C800FAC22A /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
-		18A8999C14BD68C800FAC22A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		18A899A314BD695200FAC22A /* PhotoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoTableViewController.h; sourceTree = "<group>"; };
+		18A899A414BD695200FAC22A /* PhotoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoTableViewController.m; sourceTree = "<group>"; };
+		18A899B214BD6E4000FAC22A /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+		18A899B314BD6E4000FAC22A /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		18A899B414BD6E4000FAC22A /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +83,13 @@
 		18A8998914BD68C800FAC22A /* PhotoFlick */ = {
 			isa = PBXGroup;
 			children = (
-				18A8999214BD68C800FAC22A /* AppDelegate.h */,
-				18A8999314BD68C800FAC22A /* AppDelegate.m */,
+				18A899B214BD6E4000FAC22A /* FlickrAPIKey.h */,
+				18A899B314BD6E4000FAC22A /* FlickrFetcher.h */,
+				18A899B414BD6E4000FAC22A /* FlickrFetcher.m */,
 				18A8999514BD68C800FAC22A /* MainStoryboard_iPhone.storyboard */,
 				18A8999814BD68C800FAC22A /* MainStoryboard_iPad.storyboard */,
-				18A8999B14BD68C800FAC22A /* ViewController.h */,
-				18A8999C14BD68C800FAC22A /* ViewController.m */,
+				18A899A314BD695200FAC22A /* PhotoTableViewController.h */,
+				18A899A414BD695200FAC22A /* PhotoTableViewController.m */,
 				18A8998A14BD68C800FAC22A /* Supporting Files */,
 			);
 			path = PhotoFlick;
@@ -93,6 +98,8 @@
 		18A8998A14BD68C800FAC22A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18A8999214BD68C800FAC22A /* AppDelegate.h */,
+				18A8999314BD68C800FAC22A /* AppDelegate.m */,
 				18A8998B14BD68C800FAC22A /* PhotoFlick-Info.plist */,
 				18A8998C14BD68C800FAC22A /* InfoPlist.strings */,
 				18A8998F14BD68C800FAC22A /* main.m */,
@@ -166,7 +173,8 @@
 			files = (
 				18A8999014BD68C800FAC22A /* main.m in Sources */,
 				18A8999414BD68C800FAC22A /* AppDelegate.m in Sources */,
-				18A8999D14BD68C800FAC22A /* ViewController.m in Sources */,
+				18A899A514BD695200FAC22A /* PhotoTableViewController.m in Sources */,
+				18A899B514BD6E4000FAC22A /* FlickrFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
